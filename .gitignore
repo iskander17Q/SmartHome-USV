@@ -1,0 +1,29 @@
+# IDEs
+.idea/
+.vscode/
+
+# Node
+node_modules/
+.next/
+out/
+build/
+dist/
+
+# Python
+backend/venv/
+__pycache__/
+*.pyc
+
+# Local env files
+.env
+.env.local
+
+# SQLite
+*.db
+*.sqlite
+
+# Ignored lab documentation files
+TWAAOS-RCC*.md
+
+# OS files
+.DS_Store
