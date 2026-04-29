@@ -1,63 +1,62 @@
 <div align="center">
-<h1>E Home (Умный дом)</h1>
-<p>Проект разделен на Frontend (Next.js) и Backend (Python/FastAPI) для четкого разделения логики клиентской части и бизнес-моделей сервера.</p>
+<h1>E Home (Casă Inteligentă)</h1>
+<p>Proiectul este împărțit în Frontend (Next.js) și Backend (Python/FastAPI) pentru o separare clară a logicii părții de client și a logicii serverului.</p>
 </div>
 
-## Описание архитектуры
+## Descrierea Arhitecturii
 
-Проект был портирован в соответствии с требованиями лабораторной работы (Lab #03). 
-Вместо облачных баз данных и Node.js, бэкенд теперь использует **FastAPI**, локальную базу данных **SQLite** и аутентификацию на базе **JWT**.
+Proiectul a fost modificat și adaptat în conformitate cu cerințele lucrării de laborator (Lab #03). 
+În loc de baze de date în cloud și Node.js, backend-ul utilizează acum framework-ul **FastAPI**, o bază de date locală **SQLite** și sistem de autentificare bazat pe **JWT** (JSON Web Tokens).
 
-Фронтенд по-прежнему реализован на **Next.js** и взаимодействует с бэкендом через REST API.
+Frontend-ul este realizat folosind **Next.js** și interacționează cu backend-ul prin intermediul unui API REST.
 
 ---
 
-## Запуск проекта
+## Rularea Proiectului
 
-Так как проект разделен на две части, вам нужно запускать бэкенд и фронтенд отдельно — в двух разных окнах терминала.
+Deoarece proiectul este împărțit în două părți distincte, va trebui să rulați backend-ul și frontend-ul separat — în două ferestre de terminal diferite.
 
-### Шаг 1. Запуск Backend (FastAPI + SQLite)
+### Pasul 1. Rularea Backend-ului (FastAPI + SQLite)
 
-Бэкенд отвечает за хранение данных пользователей и устройств в локальной базе `smart_home.db`. Эта база будет автоматически создана при первом запуске сервера.
+Backend-ul este responsabil pentru gestionarea și stocarea datelor utilizatorilor și dispozitivelor în baza de date locală `smart_home.db`. Această bază de date va fi creată automat la prima pornire a serverului.
 
-1. Откройте первый терминал и перейдите в папку бэкенда:
+1. Deschideți un terminal și navigați în directorul backend-ului:
    ```bash
    cd backend
    ```
-2. Создайте и активируйте виртуальное окружение:
+2. Creați și activați un mediu virtual (virtual environment):
    ```bash
    python3 -m venv venv
    source venv/bin/activate
    ```
-3. Установите зависимости:
+3. Instalați dependențele necesare:
    ```bash
    pip install -r requirements.txt
    ```
-4. Запустите сервер (с автоматической перезагрузкой):
+4. Porniți serverul (cu opțiunea de reîncărcare automată):
    ```bash
    uvicorn main:app --port 3001 --reload
    ```
-   *Сервер запустится на `http://localhost:3001`. Интерактивная документация Swagger UI будет доступна по адресу `http://localhost:3001/docs`.*
+   *Serverul va porni la adresa `http://localhost:3001`. Documentația interactivă Swagger UI va fi disponibilă la `http://localhost:3001/docs`.*
 
-### Шаг 2. Запуск Frontend (Next.js)
+### Pasul 2. Rularea Frontend-ului (Next.js)
 
-1. Откройте второй терминал и перейдите в папку фронтенда:
+1. Deschideți al doilea terminal și navigați în directorul frontend-ului:
    ```bash
    cd frontend
    ```
-2. (Опционально) Создайте файл `.env` на основе примера, если он вам нужен:
+2. (Opțional) Creați fișierul `.env` pe baza exemplului, dacă este necesar:
    ```bash
    cp .env.example .env
    ```
-3. Установите зависимости модулей:
+3. Instalați pachetele și modulele necesare:
    ```bash
    npm install
    ```
-4. Запустите клиентское приложение:
+4. Porniți aplicația client în modul de dezvoltare:
    ```bash
    npm run dev
    ```
-   *Приложение запустится на `http://localhost:3000`.* 
+   *Aplicația va porni la adresa `http://localhost:3000`.* 
 
 ---
-
